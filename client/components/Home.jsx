@@ -19,10 +19,15 @@ export default class Shape extends React.Component {
     }
   }
   render() {
-    const width = window.innerWidth / 4; // canvas width
-    const height = window.innerHeight / 4; // canvas height
+    const width = window.innerWidth; // canvas width
+    const height = window.innerHeight; // canvas height
     const type = this.props.type;
-    
+
+  var divStyle = {
+          backgroundImage: '../../public/assets/images/background-evening-01.svg'
+        }
+  //     <div style={divStyle}>
+  //     </div>
     return (
       <React3
         mainCamera="camera"

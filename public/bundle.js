@@ -68053,11 +68053,15 @@ var Shape = function (_React$Component) {
   _createClass(Shape, [{
     key: 'render',
     value: function render() {
-      var width = window.innerWidth / 4; // canvas width
-      var height = window.innerHeight / 4; // canvas height
+      var width = window.innerWidth; // canvas width
+      var height = window.innerHeight; // canvas height
       var type = this.props.type;
 
-      return _react2.default.createElement(
+      var divStyle = {
+        backgroundImage: '../../public/assets/images/background-evening-01.svg'
+        //     <div style={divStyle}>
+        //     </div>
+      };return _react2.default.createElement(
         _reactThreeRenderer2.default,
         {
           mainCamera: 'camera',
