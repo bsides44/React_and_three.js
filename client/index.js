@@ -1,16 +1,17 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
+import React from 'react'
+import {render} from 'react-dom'
+import {Provider} from 'react-redux'
 
-function helloTemplate (props) {
-  return (
-    <div>hello {props.name}</div>
+import App from './components/App'
+
+import store from './store'
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('app')
   )
-}
-
-var data = { name: 'mix' }
-var view = helloTemplate(data)
-
-var placeToMount = document.getElementById('root')
-
-ReactDOM.render(view, placeToMount)
-
+})

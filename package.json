@@ -1,31 +1,70 @@
 {
-  "name": "react-minimal",
-  "version": "0.1.0",
-  "description": "the essence of a react component",
-  "repository": "https://github.com/dev-academy-challenges/react-minimal.git",
-  "main": "index.js",
+  "name": "AR_ATUA",
+  "version": "0.1.1",
+  "description": "AR_ATUA Web App",
+  "repository": "https://github.com/harrison-symes/Bulma-Plates.git",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node server & webpack --watch"
+    "postinstall": "webpack",
+    "dev": "nodemon --watch server & webpack --watch",
+    "start": "node server/index",
+    "test": "jest",
+    "watch": "nodemon -e js,jsx -x npm test",
+    "h:deploy": "git push heroku master",
+    "h:migrate": "heroku run knex migrate:latest",
+    "h:rollback": "heroku run knex migrate:rollback",
+    "h:seed": "heroku run knex seed:run",
+    "knex": "knex"
+  },
+  "jest": {
+    "collectCoverage": true
   },
   "babel": {
     "presets": [
-      "env",
-      "react"
+      "es2015",
+      "react",
+      "stage-0"
     ]
   },
-  "keywords": [],
   "author": "EDA",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.2"
-  },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
+    "enzyme": "^2.8.2",
+    "jest": "^21.2.1",
+    "nodemon": "^1.11.0",
+    "sqlite3": "^3.1.8",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "webpack": "^3.10.0"
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "cors": "^2.8.3",
+    "css-loader": "^0.28.11",
+    "express": "^4.14.0",
+    "jsdom": "^11.0.0",
+    "jsx-loader": "^0.13.2",
+    "knex": "^0.13.0",
+    "nock": "^9.2.5",
+    "pg": "^6.2.3",
+    "react": "^15.6.2",
+    "react-css-stagger": "^0.0.8",
+    "react-dom": "^15.5.4",
+    "react-p5-wrapper": "^0.0.4",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "react-test-renderer": "^15.5.4",
+    "react-three-renderer": "^3.2.4",
+    "react-transition-group": "1.x",
+    "redux": "^3.6.0",
+    "redux-mock-store": "^1.5.1",
+    "redux-thunk": "^2.2.0",
+    "superagent": "^2.2.0",
+    "three": "^0.86.0",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
   }
 }
